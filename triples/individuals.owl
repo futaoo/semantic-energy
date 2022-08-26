@@ -1,0 +1,711 @@
+@prefix : <http://jresearch.ucd.ie/climate-kg/ca#> .
+@prefix ca: <http://jresearch.ucd.ie/climate-kg/ca/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ca-class: <http://jresearch.ucd.ie/climate-kg/ca/class/> .
+@prefix ca-property: <http://jresearch.ucd.ie/climate-kg/ca/property/> .
+@prefix seas: <https://w3id.org/seas/> .
+@prefix ca-resource-cossmic: <http://jresearch.ucd.ie/climate-kg/ca/resource/cossmic/> .
+@base <http://jresearch.ucd.ie/climate-kg/ca> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/seas/EducationalBuilding
+<https://w3id.org/seas/EducationalBuilding> rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/IndustrialBuilding
+<https://w3id.org/seas/IndustrialBuilding> rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/ResidentalBuilding
+<https://w3id.org/seas/ResidentalBuilding> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://jresearch.ucd.ie/climate-kg/ca/resource/cossmic/DE_KN_industrial1_grid_import
+<http://jresearch.ucd.ie/climate-kg/ca/resource/cossmic/DE_KN_industrial1_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                                <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                                <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                       <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/ca/resource/cossmic/DE_KN_industrial1_pv_1
+<http://jresearch.ucd.ie/climate-kg/ca/resource/cossmic/DE_KN_industrial1_pv_1> rdf:type owl:NamedIndividual ,
+                                                                                         <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                         <https://w3id.org/seas/SolarPanel> ;
+                                                                                <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial1> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> rdf:type owl:NamedIndividual ,
+                                                                             <https://w3id.org/seas/ElectricPowerDistributionNetwork> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> rdf:type owl:NamedIndividual ,
+                                                                          <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                 <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_pv> ,
+                                                                                                     <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_pv> ,
+                                                                                                     <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_pv> ,
+                                                                                                     <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_pv> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial1
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial1> rdf:type owl:NamedIndividual ,
+                                                                                 <https://w3id.org/seas/ElectricPowerSystem> ,
+                                                                                 <https://w3id.org/seas/IndustrialBuilding> ;
+                                                                        <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/ca/resource/cossmic/DE_KN_industrial1_grid_import> ;
+                                                                        <https://w3id.org/seas/producedElectricPower> <http://jresearch.ucd.ie/climate-kg/ca/resource/cossmic/DE_KN_industrial1_pv_1> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial1_pv_2> ;
+                                                                        <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial1_pv_2
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial1_pv_2> rdf:type owl:NamedIndividual ,
+                                                                                      <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                      <https://w3id.org/seas/SolarPanel> ;
+                                                                             <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial1> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2> rdf:type owl:NamedIndividual ,
+                                                                                 <https://w3id.org/seas/ElectricPowerSystem> ,
+                                                                                 <https://w3id.org/seas/IndustrialBuilding> ;
+                                                                        <https://w3id.org/seas/consumedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_storage_charge> ;
+                                                                        <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_grid_import> ;
+                                                                        <https://w3id.org/seas/producedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_pv> ;
+                                                                        <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_grid_import
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_pv
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_pv> rdf:type owl:NamedIndividual ,
+                                                                                    <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                    <https://w3id.org/seas/SolarPanel> ;
+                                                                           <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_storage_charge
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_storage_charge> rdf:type owl:NamedIndividual ,
+                                                                                                <https://w3id.org/seas/Battery> ,
+                                                                                                <https://w3id.org/seas/ElectricPowerConsumer> ;
+                                                                                       <https://w3id.org/seas/consumedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_storage_decharge> ;
+                                                                                       <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_storage_decharge
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial2_storage_decharge> rdf:type owl:NamedIndividual ,
+                                                                                                  <https://w3id.org/seas/Battery> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerProperty> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> rdf:type owl:NamedIndividual ,
+                                                                                 <https://w3id.org/seas/ElectricPowerSystem> ,
+                                                                                 <https://w3id.org/seas/IndustrialBuilding> ;
+                                                                        <https://w3id.org/seas/consumedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_offices> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_1> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_2> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_3> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_4> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_compressor> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_cooling_aggregate> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_cooling_pumps> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_dishwasher> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_ev> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_1> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_2> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_3> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_4> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_5> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_refrigerator> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_ventilation> ;
+                                                                        <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_grid_import> ;
+                                                                        <https://w3id.org/seas/producedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_pv_facade> ,
+                                                                                                                      <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_pv_roof> ;
+                                                                        <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_offices
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_offices> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                              <https://w3id.org/seas/Office> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_1
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_1> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                             <https://w3id.org/seas/Room> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_2
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_2> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                             <https://w3id.org/seas/Room> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_3
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_3> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                             <https://w3id.org/seas/Room> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_4
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_area_room_4> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                             <https://w3id.org/seas/Room> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_compressor
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_compressor> rdf:type owl:NamedIndividual ,
+                                                                                            <https://w3id.org/saref#Appliance> ,
+                                                                                            <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                            <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                   <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_cooling_aggregate
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_cooling_aggregate> rdf:type owl:NamedIndividual ,
+                                                                                                   <https://w3id.org/saref#Appliance> ,
+                                                                                                   <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                                   <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                          <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_cooling_pumps
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_cooling_pumps> rdf:type owl:NamedIndividual ,
+                                                                                               <https://w3id.org/saref#Appliance> ,
+                                                                                               <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                               <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                      <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_dishwasher
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_dishwasher> rdf:type owl:NamedIndividual ,
+                                                                                            <https://w3id.org/saref#Appliance> ,
+                                                                                            <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                            <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                   <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_ev
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_ev> rdf:type owl:NamedIndividual ,
+                                                                                    <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                    <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                    <https://w3id.org/seas/ElectricVehicle> ;
+                                                                           <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_grid_import
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_1
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_1> rdf:type owl:NamedIndividual ,
+                                                                                           <https://w3id.org/saref#Load> ,
+                                                                                           <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                           <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                  <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_2
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_2> rdf:type owl:NamedIndividual ,
+                                                                                           <https://w3id.org/saref#Load> ,
+                                                                                           <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                           <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                  <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_3
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_3> rdf:type owl:NamedIndividual ,
+                                                                                           <https://w3id.org/saref#Load> ,
+                                                                                           <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                           <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                  <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_4
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_4> rdf:type owl:NamedIndividual ,
+                                                                                           <https://w3id.org/saref#Load> ,
+                                                                                           <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                           <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                  <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_5
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_machine_5> rdf:type owl:NamedIndividual ,
+                                                                                           <https://w3id.org/saref#Load> ,
+                                                                                           <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                           <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                  <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_pv_facade
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_pv_facade> rdf:type owl:NamedIndividual ,
+                                                                                           <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                           <https://w3id.org/seas/SolarPanel> ;
+                                                                                  <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_pv_roof
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_pv_roof> rdf:type owl:NamedIndividual ,
+                                                                                         <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                         <https://w3id.org/seas/SolarPanel> ;
+                                                                                <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_refrigerator
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_refrigerator> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/saref#Appliance> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_ventilation
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3_ventilation> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/saref#Appliance> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_industrial3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_public1
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_public1> rdf:type owl:NamedIndividual ,
+                                                                             <https://w3id.org/seas/EducationalBuilding> ,
+                                                                             <https://w3id.org/seas/ElectricPowerSystem> ;
+                                                                    <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_public1_grid_import> ;
+                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_public1_grid_import
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_public1_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                         <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_public2
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_public2> rdf:type owl:NamedIndividual ,
+                                                                             <https://w3id.org/seas/EducationalBuilding> ,
+                                                                             <https://w3id.org/seas/ElectricPowerSystem> ;
+                                                                    <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_public2_grid_import> ;
+                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_public2_grid_import
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_public2_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                         <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                         <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1> rdf:type owl:NamedIndividual ,
+                                                                                  <https://w3id.org/seas/ElectricPowerSystem> ,
+                                                                                  <https://w3id.org/seas/ResidentalBuilding> ;
+                                                                         <https://w3id.org/seas/consumedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_dishwasher> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_freezer> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_heat_pump> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_washing_machine> ;
+                                                                         <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_grid_import> ;
+                                                                         <https://w3id.org/seas/producedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_pv> ;
+                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_dishwasher
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_dishwasher> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/saref#Appliance> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_freezer
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_freezer> rdf:type owl:NamedIndividual ,
+                                                                                          <https://w3id.org/saref#Appliance> ,
+                                                                                          <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                          <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                 <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_grid_import
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_heat_pump
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_heat_pump> rdf:type owl:NamedIndividual ,
+                                                                                            <https://w3id.org/saref#Appliance> ,
+                                                                                            <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                            <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                   <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_pv
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_pv> rdf:type owl:NamedIndividual ,
+                                                                                     <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                     <https://w3id.org/seas/SolarPanel> ;
+                                                                            <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_washing_machine
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1_washing_machine> rdf:type owl:NamedIndividual ,
+                                                                                                  <https://w3id.org/saref#Appliance> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential1> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2> rdf:type owl:NamedIndividual ,
+                                                                                  <https://w3id.org/seas/ElectricPowerSystem> ,
+                                                                                  <https://w3id.org/seas/ResidentalBuilding> ;
+                                                                         <https://w3id.org/seas/consumedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_circulation_pump> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_dishwasher> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_freezer> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_washing_machine> ;
+                                                                         <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_grid_import> ;
+                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_circulation_pump
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_circulation_pump> rdf:type owl:NamedIndividual ,
+                                                                                                   <https://w3id.org/saref#Appliance> ,
+                                                                                                   <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                                   <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                          <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_dishwasher
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_dishwasher> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/saref#Appliance> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_freezer
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_freezer> rdf:type owl:NamedIndividual ,
+                                                                                          <https://w3id.org/saref#Appliance> ,
+                                                                                          <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                          <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                 <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_grid_import
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_washing_machine
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2_washing_machine> rdf:type owl:NamedIndividual ,
+                                                                                                  <https://w3id.org/saref#Appliance> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential2> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3> rdf:type owl:NamedIndividual ,
+                                                                                  <https://w3id.org/seas/ElectricPowerSystem> ,
+                                                                                  <https://w3id.org/seas/ResidentalBuilding> ;
+                                                                         <https://w3id.org/seas/consumedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_circulation_pump> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_dishwasher> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_freezer> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_refrigerator> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_washing_machine> ;
+                                                                         <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_grid_import> ;
+                                                                         <https://w3id.org/seas/powers> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_grid_export> ;
+                                                                         <https://w3id.org/seas/producedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_pv> ;
+                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_circulation_pump
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_circulation_pump> rdf:type owl:NamedIndividual ,
+                                                                                                   <https://w3id.org/saref#Appliance> ,
+                                                                                                   <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                                   <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                          <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_dishwasher
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_dishwasher> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/saref#Appliance> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_freezer
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_freezer> rdf:type owl:NamedIndividual ,
+                                                                                          <https://w3id.org/saref#Appliance> ,
+                                                                                          <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                          <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                 <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_grid_export
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_grid_export> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_grid_import
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_pv
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_pv> rdf:type owl:NamedIndividual ,
+                                                                                     <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                     <https://w3id.org/seas/SolarPanel> ;
+                                                                            <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_refrigerator
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_refrigerator> rdf:type owl:NamedIndividual ,
+                                                                                               <https://w3id.org/saref#Appliance> ,
+                                                                                               <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                               <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                      <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_washing_machine
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3_washing_machine> rdf:type owl:NamedIndividual ,
+                                                                                                  <https://w3id.org/saref#Appliance> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential3> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4> rdf:type owl:NamedIndividual ,
+                                                                                  <https://w3id.org/seas/ElectricPowerSystem> ,
+                                                                                  <https://w3id.org/seas/ResidentalBuilding> ;
+                                                                         <https://w3id.org/seas/consumedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_dishwasher> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_ev> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_freezer> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_heat_pump> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_refrigerator> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_washing_machine> ;
+                                                                         <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_grid_import> ;
+                                                                         <https://w3id.org/seas/powers> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_grid_export> ;
+                                                                         <https://w3id.org/seas/producedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_pv> ;
+                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_dishwasher
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_dishwasher> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/saref#Appliance> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_ev
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_ev> rdf:type owl:NamedIndividual ,
+                                                                                     <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                     <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                     <https://w3id.org/seas/ElectricVehicle> ;
+                                                                            <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_freezer
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_freezer> rdf:type owl:NamedIndividual ,
+                                                                                          <https://w3id.org/saref#Appliance> ,
+                                                                                          <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                          <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                 <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_grid_export
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_grid_export> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_grid_import
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_heat_pump
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_heat_pump> rdf:type owl:NamedIndividual ,
+                                                                                            <https://w3id.org/saref#Appliance> ,
+                                                                                            <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                            <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                   <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_pv
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_pv> rdf:type owl:NamedIndividual ,
+                                                                                     <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                     <https://w3id.org/seas/SolarPanel> ;
+                                                                            <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_refrigerator
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_refrigerator> rdf:type owl:NamedIndividual ,
+                                                                                               <https://w3id.org/saref#Appliance> ,
+                                                                                               <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                               <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                      <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_washing_machine
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4_washing_machine> rdf:type owl:NamedIndividual ,
+                                                                                                  <https://w3id.org/saref#Appliance> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential4> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5> rdf:type owl:NamedIndividual ,
+                                                                                  <https://w3id.org/seas/ElectricPowerSystem> ,
+                                                                                  <https://w3id.org/seas/ResidentalBuilding> ;
+                                                                         <https://w3id.org/seas/consumedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_dishwasher> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_refrigerator> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_washing_machine> ;
+                                                                         <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_grid_import> ;
+                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_dishwasher
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_dishwasher> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/saref#Appliance> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_grid_import
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_refrigerator
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_refrigerator> rdf:type owl:NamedIndividual ,
+                                                                                               <https://w3id.org/saref#Appliance> ,
+                                                                                               <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                               <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                      <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_washing_machine
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5_washing_machine> rdf:type owl:NamedIndividual ,
+                                                                                                  <https://w3id.org/saref#Appliance> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential5> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6> rdf:type owl:NamedIndividual ,
+                                                                                  <https://w3id.org/seas/ElectricPowerSystem> ,
+                                                                                  <https://w3id.org/seas/ResidentalBuilding> ;
+                                                                         <https://w3id.org/seas/consumedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_circulation_pump> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_dishwasher> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_freezer> ,
+                                                                                                                       <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_washing_machine> ;
+                                                                         <https://w3id.org/seas/isPoweredBy> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_grid_import> ;
+                                                                         <https://w3id.org/seas/powers> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_grid_export> ;
+                                                                         <https://w3id.org/seas/producedElectricPower> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_pv> ;
+                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_COSSMIC> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_circulation_pump
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_circulation_pump> rdf:type owl:NamedIndividual ,
+                                                                                                   <https://w3id.org/saref#Appliance> ,
+                                                                                                   <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                                   <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                          <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_dishwasher
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_dishwasher> rdf:type owl:NamedIndividual ,
+                                                                                             <https://w3id.org/saref#Appliance> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                             <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                    <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_freezer
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_freezer> rdf:type owl:NamedIndividual ,
+                                                                                          <https://w3id.org/saref#Appliance> ,
+                                                                                          <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                          <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                 <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_grid_export
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_grid_export> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_grid_import
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_grid_import> rdf:type owl:NamedIndividual ,
+                                                                                              <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                              <https://w3id.org/seas/ElectricPowerTransmissionSystem> ;
+                                                                                     <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_grid> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_pv
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_pv> rdf:type owl:NamedIndividual ,
+                                                                                     <https://w3id.org/seas/ElectricPowerProperty> ,
+                                                                                     <https://w3id.org/seas/SolarPanel> ;
+                                                                            <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6> .
+
+
+###  http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_washing_machine
+<http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6_washing_machine> rdf:type owl:NamedIndividual ,
+                                                                                                  <https://w3id.org/saref#Appliance> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerConsumer> ,
+                                                                                                  <https://w3id.org/seas/ElectricPowerProperty> ;
+                                                                                         <https://w3id.org/seas/subSystemOf> <http://jresearch.ucd.ie/climate-kg/resource/cossmic/DE_KN_residential6> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

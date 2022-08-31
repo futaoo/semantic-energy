@@ -1,7 +1,7 @@
 # A semantic web approach to uplift decentralized household energy data
 With the spirit of reproducible research, this repository includes a complete collection of codes required to generate the results and diagrams presented in the paper:
 
-> J. Wu, F. Orlandi, D. O'Sullivan, S. Dev, A semantic web approach to uplift decentralized household energy data, *Sustainable Energy, Grids and Networks*, 2021.
+> J. Wu, F. Orlandi, D. O'Sullivan, S. Dev, A semantic web approach to uplift decentralized household energy data, *Sustainable Energy, Grids and Networks*, 2022.
 
 ## Details
 - `ontoEnergy-extension.ipynb` contains script converting tabular data into the rdf data and the coding work for figures (e.g. correlatin analysis) shown in the paper. 
